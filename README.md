@@ -8,6 +8,11 @@
 	I had been testing with this url so I was able to identify a string that does not appear on the site ("abcdefghijklmnopqrstuvwxyz", so it checks that there is no count for that string.
 	Additionally, it checks that the words "the" appears 80030. And more importantly, that the word "isaiah" only appears once (which is easily verifiable with a browser).
 
+	for the client, i created 2 unit tests. The first, givenBadUrls_ClientShouldMarkAllInvalid, makes sure that url validation is working correctly.
+	The 2nd unit test, givenGoodUrls_ClientShouldMarkAllValidAndGetWordCountMapsIfConnected, tests a set of valid urls. And if the server is running,
+	also passes them to the server and checks that the wordCountMap is not null and not empty. This helps ensure that when valid URLs are passed to the server
+	the client is receiving data.
+
 3. Make sure the your solution is reproducible: specify dependencies, versions, runtime 
 
 	dependencies should be listed in the Pom files. But I used Maven 3.1.8, Spring boot 2.6.7, Hamcrest, Jsoup 1.14.3, junit, the spring-boot-maven-plugin.
