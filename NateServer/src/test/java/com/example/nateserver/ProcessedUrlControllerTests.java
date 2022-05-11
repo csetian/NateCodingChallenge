@@ -45,5 +45,10 @@ public class ProcessedUrlControllerTests {
         Assert.isTrue(wordCountMap.containsKey("the"), "WordCountMap should have a key for \"the\"");
         Number i =  wordCountMap.get("the");
         Assert.isTrue(i.intValue() == 80030, "the count for \"the\" should be 80030");
+
+        Assert.isTrue(wordCountMap.containsKey("isaiah"), "WordCountMap should have a key for \"isaiah\"");
+        i =  wordCountMap.get("isaiah");
+        Assert.isTrue(i.intValue() == 1, "the count for \"isaiah\" should be 1");
+
     }
 }

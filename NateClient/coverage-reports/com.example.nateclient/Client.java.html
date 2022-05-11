@@ -20,14 +20,14 @@ import java.util.Scanner;
 
     public Map&lt;String,Integer&gt; sendUrl(String url){
         try {
-<span class="nc" id="L23">            RestTemplate template = new RestTemplate();</span>
-<span class="nc" id="L24">            JsonParser parser = new BasicJsonParser();</span>
+<span class="fc" id="L23">            RestTemplate template = new RestTemplate();</span>
+<span class="fc" id="L24">            JsonParser parser = new BasicJsonParser();</span>
             // pass the URL to the server and parse the output
-<span class="nc" id="L26">            Map&lt;String, Object&gt; outputMap = parser.parseMap(template.getForObject(uri + &quot;/process?url=&quot; + url, String.class));</span>
-<span class="nc" id="L27">            Map&lt;String, Integer&gt; wordCountMap = (Map&lt;String, Integer&gt;) outputMap.get(&quot;wordCountMap&quot;);</span>
+<span class="fc" id="L26">            Map&lt;String, Object&gt; outputMap = parser.parseMap(template.getForObject(uri + &quot;/process?url=&quot; + url, String.class));</span>
+<span class="fc" id="L27">            Map&lt;String, Integer&gt; wordCountMap = (Map&lt;String, Integer&gt;) outputMap.get(&quot;wordCountMap&quot;);</span>
             //System.out.println(wordCountMap);
-<span class="nc" id="L29">            wordCountMap.entrySet().forEach(x -&gt; System.out.println(x.getKey() + &quot;:&quot; + x.getValue()));</span>
-<span class="nc" id="L30">            return  wordCountMap;</span>
+<span class="fc" id="L29">            wordCountMap.entrySet().forEach(x -&gt; System.out.println(x.getKey() + &quot;:&quot; + x.getValue()));</span>
+<span class="fc" id="L30">            return  wordCountMap;</span>
 <span class="nc" id="L31">        }catch (ResourceAccessException e){</span>
 <span class="nc" id="L32">            System.out.println(e);</span>
         }
@@ -37,11 +37,11 @@ import java.util.Scanner;
     public boolean canConnect(){
         try{
 <span class="fc" id="L39">            RestTemplate template = new RestTemplate();</span>
-<span class="nc" id="L40">            template.getForObject(uri+ &quot;/process&quot;, String.class);</span>
-<span class="fc" id="L41">        }catch (Exception e){</span>
-<span class="fc" id="L42">            return false;</span>
-<span class="nc" id="L43">        }</span>
-<span class="nc" id="L44">        return true;</span>
+<span class="fc" id="L40">            template.getForObject(uri+ &quot;/process&quot;, String.class);</span>
+<span class="nc" id="L41">        }catch (Exception e){</span>
+<span class="nc" id="L42">            return false;</span>
+<span class="fc" id="L43">        }</span>
+<span class="fc" id="L44">        return true;</span>
     }
     @Generated // custom annotation to exclude from jacoco coverage report
     public void readFromCommandLine(){
